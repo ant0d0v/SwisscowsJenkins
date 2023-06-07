@@ -11,9 +11,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <aspectj.version>1.9.19</aspectj.version>
-        <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
-        <allure-testing.version>2.6.0</allure-testing.version>
+        <aspectj.version>1.9.5</aspectj.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <allure-testing.version>2.15.0</allure-testing.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <suiteXml>testng.xml</suiteXml>
@@ -95,7 +95,7 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.8</version>
                 <configuration>
-                    <allureDownloadUrl>https://github.com/allure-framework/allure/releases/download/2.7.0/allure-2.7.0.zip</allureDownloadUrl>
+                    <allureDownloadUrl>https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/${allure-testing.version}/allure-commandline-${allure-testing.version}.zip</allureDownloadUrl>
                     <resultsDirectory>allure-results</resultsDirectory>
                 </configuration>
             </plugin>
