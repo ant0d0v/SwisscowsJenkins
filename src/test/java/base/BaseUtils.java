@@ -1,5 +1,4 @@
 package base;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -31,10 +30,10 @@ public final class BaseUtils {
         if (options != null) {
             for (String argument : options.split(";")) {
                 chromeOptions.addArguments(argument);
+                chromeOptions.addArguments("--headless");
                 chromeOptions.addArguments("--remote-allow-origins=*");
             }
         }
-
         WebDriverManager.chromedriver().setup();
     }
 
