@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     tools {
+        jdk "ide"
         maven "maven.jenkins"
     }
     parameters {
