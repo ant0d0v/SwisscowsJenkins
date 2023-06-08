@@ -2,18 +2,17 @@ pipeline {
     agent any
 
     tools {
-
         maven "maven.jenkins"
     }
     parameters {
-       booleanParams(defaultValue: true, description: 'run SummaryTest tests', name: 'SummaryTest')
-       booleanParams(defaultValue: true, description: 'run MainTest tests', name: 'MainTest')
+       booleanParam(defaultValue: true, description: 'run SummaryTest tests', name: 'Summary')
+       booleanParam(defaultValue: true, description: 'run MainTest tests', name: 'Main')
     }
 
     stages {
         stage('SummaryTest tests') {
             when {
-              expression {return params.SummaryTest}
+              expression { return params.Summary }
             }
             steps {
                 sh "mvn -Dtest=tests.SummaryTest test verify"
@@ -21,7 +20,7 @@ pipeline {
         }
         stage('SummaryTest tests') {
                     when {
-                      expression {return params.MainTest}
+                      expression { return params.Main }
                     }
                     steps {
                         sh "mvn -Dtest=tests.MainTest test verify"
