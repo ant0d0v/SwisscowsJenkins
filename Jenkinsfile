@@ -11,7 +11,7 @@ pipeline {
     }
 
     stages {
-        stage('SummaryTest tests') {
+        stage('summaryTest tests') {
             when {
               expression { return params.Summary }
             }
@@ -19,7 +19,7 @@ pipeline {
                 sh "mvn -Dtest=tests.SummaryTest verify"
             }
         }
-        stage('MainTest tests') {
+        stage('mainTest tests') {
                     when {
                       expression { return params.Main }
                     }
@@ -32,7 +32,7 @@ pipeline {
        always {
           allure([
             reportBuildPolicy: 'ALWAYS',
-            result: [[path: 'target/allure-results']]
+            results: [[path: 'target/allure-results']]
           ])
        }
     }
