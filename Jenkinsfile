@@ -15,7 +15,7 @@ pipeline {
               expression { return params.Summary }
             }
             steps {
-                sh "mvn -Dtest=tests.SummaryTest test verify"
+                sh "mvn -Dtest=tests.SummaryTest verify"
             }
         }
         stage('SummaryTest tests') {
@@ -23,7 +23,7 @@ pipeline {
                       expression { return params.Main }
                     }
                     steps {
-                        sh "mvn -Dtest=tests.MainTest test verify"
+                        sh "mvn -Dtest=tests.MainTest verify"
                     }
            }
     }
