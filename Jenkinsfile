@@ -16,16 +16,16 @@ pipeline {
               expression { return params.Summary }
             }
             steps {
-                sh "mvn -Dtest=SummaryTest test"
+                sh "-Dtest=SummaryTest test"
             }
         }
         stage('mainTest tests') {
-                    when {
-                      expression { return params.Main }
-                    }
-                    steps {
-                        sh "mvn -Dtest=MainTest test"
-                    }
+              when {
+                 expression { return params.Main }
+                 }
+               steps {
+                  sh "-Dtest=MainTest test"
+                  }
            }
     }
     post {
