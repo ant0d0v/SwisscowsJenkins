@@ -6,27 +6,19 @@ pipeline {
         maven "maven.jenkins"
     }
     parameters {
-       booleanParam(defaultValue: true, description: 'run SummaryTest tests', name: 'Summary')
-       booleanParam(defaultValue: false, description: 'run MainTest tests', name: 'Main')
+       booleanParam(defaultValue: true, description: 'run Test tests', name: 'test')
     }
 
     stages {
         stage('summaryTest tests') {
             when {
-              expression { return params.Summary }
+              expression { return params.test }
             }
             steps {
-                sh "mvn -Dtest=tests.SummaryTest test verify"
+                sh "mvn test"
             }
         }
-        stage('mainTest tests') {
-              when {
-                 expression { return params.Main }
-                 }
-               steps {
-                  sh "mvn -Dtest=tests.MainTest test verify"
-                  }
-           }
+
     }
     post {
        always {
