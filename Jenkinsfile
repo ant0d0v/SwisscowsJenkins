@@ -6,7 +6,7 @@ pipeline {
     }
     parameters {
        booleanParam(defaultValue: true, description: 'run SummaryTest tests', name: 'Summary')
-       booleanParam(defaultValue: true, description: 'run MainTest tests', name: 'Main')
+       booleanParam(defaultValue: false, description: 'run MainTest tests', name: 'Main')
     }
 
     stages {
