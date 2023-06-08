@@ -19,7 +19,7 @@ pipeline {
                 sh "mvn -Dtest=tests.SummaryTest verify"
             }
         }
-        stage('SummaryTest tests') {
+        stage('MainTest tests') {
                     when {
                       expression { return params.Main }
                     }
