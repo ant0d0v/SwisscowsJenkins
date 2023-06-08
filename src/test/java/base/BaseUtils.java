@@ -32,6 +32,7 @@ public final class BaseUtils {
         if (options != null) {
             for (String argument : options.split(";")) {
                 chromeOptions.addArguments(argument);
+                chromeOptions.addArguments("--headless","--no-gpu");
                 chromeOptions.addArguments("--remote-allow-origins=*");
             }
         }
